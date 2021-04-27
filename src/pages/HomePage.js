@@ -1,12 +1,19 @@
+import TodoComponent from '../components/Todo';
 const HomePage = () => {
     return (
-      <div id='home'>
+      
         <div className='row text-center'>
+            
+            <div className='col-12'>
+             <h1>To-do List</h1>
+            </div>
+            
           <div className='col'>
-            <h2>Home Page!</h2>
+            <TodoComponent />
           </div>
+
         </div>
-      </div>
+    
     );
   };
   
