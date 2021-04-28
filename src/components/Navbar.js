@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom';
 const Navbar = () => {
   return (
     <nav className='navbar navbar-expand-lg navbar-dark bg-dark'>
-      <Link to='/' className='navbar-brand'>
-        Todo
-      </Link>
 
+      <h1 className='navbar-brand'>
+        To-do Context
+      </h1>
 
       <div className='collapse navbar-collapse'>
         <div className='navbar-nav'>
@@ -15,6 +15,7 @@ const Navbar = () => {
           </Link>
         </div>
       </div>
+      
     </nav>
   );
 };

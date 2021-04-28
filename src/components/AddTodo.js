@@ -1,35 +1,46 @@
-import React, { useState, event } from 'react';
+import React, { useState } from 'react';
 
-const AddTodoComponent = () => {
-    const [todoItem, setTodoItem] = useState('');
+const AddTodoComponent = ({ addTask }) => {
+    const [ userInput, setUserInput ] = useState('');
 
-    const handleSubmit = (addTodo) => {
-        event.preventDefault();
-        addTodo(todoItem);
-        setTodoItem('');
-      };
- 
+    const handleChange = (e) => {
+        setUserInput(e.currentTarget.value)
+    }
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        addTask(userInput);
+        setUserInput('');
+
+        if (!userInput) {
+            alert(`You did not enter a task! Try again!`);
+          } else {
+            alert(`${userInput} has been added to your to do list!`);
+          }
+    }
     return (
-        <div >
-        <form>
-    <input
-      type='text'
-      className='form-control'
-      value={todoItem}
-      onChange={event => setTodoItem(event.target.value)}
-    />
+        <div className='col text-center md-col-12'>
 
-    <div className='input-group-append text-center my-2'>
-            <button 
-            className='btn btn-secondary' 
-            onClick={handleSubmit}>
-              Add
-            </button>
-    </div>
+          <form onSubmit={handleSubmit}>
+            <input 
+            style={{marginTop: '2%', width: '80%', textAlign: 'center'}}
+            value={userInput} 
+            type='text'
+            onChange={handleChange} 
+            placeholder="Please enter your task!"
+            />
+            <div>
+              <button style={{marginTop: '1%'}} 
+              className="btn btn-primary" >Submit</button>   
+            </div>
+            
+          </form>  
+        </div>
+        
+
+       
+    );
      
-  </form>
-    </div>
-  );
 };
 
 export default AddTodoComponent;

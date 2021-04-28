@@ -1,15 +1,17 @@
-import React, { useState, event } from 'react';
-import AddTodoComponent from './AddTodo';
-// import { todoData } from './todoData';
-// import './App.css';
+import React from 'react';
 
-const TodoComponent = () => {
-    
+const TodoComponent = ({todo, handleToggle}) => {
+
+    const handleClick = (e) => {
+        e.preventDefault()
+        handleToggle(e.currentTarget.id)
+    }
 
     return (
-        <AddTodoComponent />
-    
-    )
+        <div id={todo.id} key={todo.id + todo.task} name="todo" value={todo.id} onClick={handleClick} className={todo.complete ? "todo strike" : "todo"}>
+            {todo.task}
+        </div>
+    );
 };
 
 export default TodoComponent;
