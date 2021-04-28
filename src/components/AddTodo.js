@@ -22,6 +22,8 @@ const AddTodoComponent = ({ addTask }) => {
         <div className='col text-center md-col-12'>
 
           <form onSubmit={handleSubmit}>
+            <div>
+
             <input 
             style={{marginTop: '2%', width: '80%', textAlign: 'center'}}
             value={userInput} 
@@ -29,9 +31,9 @@ const AddTodoComponent = ({ addTask }) => {
             onChange={handleChange} 
             placeholder="Please enter your task!"
             />
-            <div>
-              <button style={{marginTop: '1%'}} 
-              className="btn btn-primary" >Submit</button>   
+
+              <button style={{marginLeft: '1%'}} 
+              className="btn btn-primary" >Add</button>   
             </div>
             
           </form>  

@@ -8,8 +8,14 @@ const TodoComponent = ({todo, handleToggle}) => {
     }
 
     return (
-        <div id={todo.id} key={todo.id + todo.task} name="todo" value={todo.id} onClick={handleClick} className={todo.complete ? "todo strike" : "todo"}>
-            {todo.task}
+        <div 
+        id={todo.id} 
+        key={todo.id + todo.task} 
+        name="todo" 
+        value={todo.id} 
+        onClick={handleClick} 
+        className={todo.complete ? "todo strike" : "todo"}>
+        {todo.task}
         </div>
     );
 };

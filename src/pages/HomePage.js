@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import data from '../data.json';
-
 /** Components for the list */
 import TodoListComponent from "../components/TodoList";
 import AddTodoComponent from '../components/AddTodo';
@@ -43,9 +42,13 @@ const HomePage = () => {
             
             
           <div className='col'>
-            <AddTodoComponent addTask={addTask} />
 
-            <TodoListComponent toDoList={toDoList} 
+            <AddTodoComponent 
+            addTask={addTask} 
+            />
+
+            <TodoListComponent 
+            toDoList={toDoList} 
             handleToggle={handleToggle} 
             handleFilter={handleFilter} 
             />
